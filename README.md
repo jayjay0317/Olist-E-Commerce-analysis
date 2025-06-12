@@ -11,7 +11,7 @@ This project involves a deep-dive analysis of the Olist e-commerce dataset. The 
 - **BI & Visualization:** Tableau
 - **Version Control:** Git & GitHub
 
-## 3. Key Business Questions (🔥 여기가 핵심!)
+## 3. Key Business Questions
 This dashboard will be designed to answer the following critical business questions:
 
 * **Q1: Business Growth & Health:** What are the monthly sales and revenue trends? How does seasonality affect our business?
