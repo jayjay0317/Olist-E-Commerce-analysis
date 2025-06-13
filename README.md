@@ -21,5 +21,5 @@ This dashboard will be designed to answer the following critical business questi
 - **Live Dashboard:** [Link will be added here later]
 - **Data Source:** [Olist E-commerce Dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
----
+
 *(나머지 섹션(SQL Highlights, Insights 등)은 나중에 채워 넣을 것이므로 일단 비워둡니다.)*
