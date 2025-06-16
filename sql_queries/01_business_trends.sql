@@ -2,10 +2,8 @@
 --------------------------------------------------------------------------------
 -- Query for: 1. Business Growth & Health
 -- Description: This query calculates the total number of orders and revenue per month
--- to analyze the overall business growth trend.
---
--- Author: Jaewoo Lee
---------------------------------------------------------------------------------
+--              to analyze the overall business growth trend.
+---------------------------------------------------------------------------------
 */
 
 SELECT
