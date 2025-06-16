@@ -49,12 +49,12 @@ ORDER BY
 ```
 This query aggregates the number of delivered orders and the total payment value on a monthly basis.
 
-Key Insights:
+Key Insights:  
 Consistent Upward Trend: Olist demonstrated a strong and consistent upward trend in both order volume and total revenue throughout 2017.
 Significant Seasonal Peak: A remarkable surge in both metrics was observed in November 2017. This significant spike strongly suggests the successful impact of a major seasonal event like Black Friday, highlighting responsiveness to promotional activities.
 Momentum into 2018: The positive momentum from late 2017 appears to carry into early 2018, indicating a healthy growth trajectory within the available data period. (Note: Data for late 2018 might be incomplete, limiting long-term trend analysis beyond the scope of this dataset.)
 
-Recommendations:
+Recommendations:  
 Analyze Peak Event Success: Conduct a deeper dive into the factors contributing to the November 2017 peak (e.g., specific promotions, popular products/sellers) to identify key success drivers that can be replicated.
 Strategic Seasonal Planning: Leverage insights from identified seasonal peaks and trends to inform future marketing campaigns, inventory management, and logistics planning for similar events.
 
