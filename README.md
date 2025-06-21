@@ -301,3 +301,22 @@ Olist demonstrated significant growth in late 2017, notably influenced by season
 4.  **Customer Loyalty & Retention:** Address the low 3.00% overall re-purchase rate as a top priority. Leverage the identified customer segments (especially 'Low-Value Infrequent' and 'High-Value Loyal') to develop and implement personalized retention strategies, loyalty programs, and targeted communications aimed at increasing repeat purchases and maximizing customer lifetime value. Optimize the initial purchase experience to encourage first-time buyers to return.
 
 These data-driven recommendations provide a framework for Olist's leadership to prioritize initiatives and allocate resources effectively to foster sustainable growth and improve key aspects of the business.
+
+<!-- 섹션 구분을 위한 가로선 추가 -->
+9. Tableau Dashboard Structure <!-- Tableau 섹션 추가 제안 -->
+The analysis findings are visualized in an interactive Tableau dashboard available on Tableau Public. The dashboard structure is organized into the following key areas:
+Executive Summary: A high-level overview of key metrics (Total Revenue, Total Orders, Re-purchase Rate, Delay Rate).
+Growth Trends: Visualizing monthly orders and revenue, highlighting seasonal peaks.
+Product Performance: Analyzing top categories by revenue, volume, and average order value.
+Regional Distribution: Mapping sales and order counts across Brazilian states and potentially cities.
+Delivery Performance: Visualizing average delivery times and the delay rate.
+Customer Segmentation: Presenting the size and characteristics of different customer segments.
+[Link to the Interactive Tableau Dashboard on Tableau Public] <!-- 여기에 링크를 다시 한번 강조 -->
+(Optional: Add screenshots of key dashboard views in the images folder and link them here)
+<!-- 예시: ![Growth Trend Dashboard View](images/growth_dashboard.png) -->
+<!-- 섹션 구분을 위한 가로선 추가 -->
+10. Technical Implementation Notes <!-- 기술적인 디테일 섹션 추가 제안 -->
+Database Setup: The PostgreSQL database schema can be reproduced using the 00_database_setup.sql script found in the sql_queries folder. This script includes DROP, CREATE TABLE, and COPY commands.
+Data Loading: Data was loaded into PostgreSQL using the COPY command in SQL (or can be automated using Python Pandas with df.to_sql for large files, handling potential CSV parsing issues).
+Query Development: All SQL queries used for the Tableau dashboard are stored in the sql_queries folder, structured by analysis area (01_..., 02_..., etc.).
+Environment Variables: Database credentials are managed securely using environment variables and loaded via the python-dotenv library, preventing sensitive information from being exposed in the code or version control.

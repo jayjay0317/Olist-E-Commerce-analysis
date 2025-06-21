@@ -1,8 +1,8 @@
 /*
 --------------------------------------------------------------------------------
 -- Query for: 2. Product Performance Analysis
--- Description: This query identifies the top 10 product categories by total revenue
---              and a. It also includes the number of unique orders and the average
+-- Description: This query identifies the top 10 product categories by total revenue.
+--              It also includes the number of unique orders and the average
 --              revenue per order for each category.
 --------------------------------------------------------------------------------
 */
