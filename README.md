@@ -18,7 +18,7 @@ This dashboard is designed to answer the following critical business questions, 
 *   **Q5: Customer Loyalty:** What is the re-purchase rate of our customer base? How can we segment customers based on their value?
 
 ## 4. Dashboard & Data Source
-- **Live Interactive Dashboard:** [Link will be added here later]
+- **Interactive Dashboard:** [Link will be added here later]
 - **Data Source:** [Olist E-commerce Dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
 ---
