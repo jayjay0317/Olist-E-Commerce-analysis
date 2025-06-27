@@ -1,0 +1,5 @@
+"customer_segment","number_of_customers","average_frequency","average_monetary"
+"Promising (High Value)","1796","1.00000000000000000000","331.8299220489977"
+"High-Value Loyal","44882","1.06189563744931152801","264.224665121873"
+"Loyal (Lower Value)","1796","1.1904231625835189","101.84966592427607"
+"Low-Value Infrequent","44883","1.00000000000000000000","62.042238932333355"
