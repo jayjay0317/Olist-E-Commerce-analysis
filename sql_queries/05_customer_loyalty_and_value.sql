@@ -78,9 +78,12 @@ segmented_customers AS (
             WHEN frequency_quartile >= 3 AND monetary_quartile < 3 THEN 'Loyal (Lower Value)' -- High F, Low M
             WHEN frequency_quartile < 3 AND monetary_quartile >= 3 THEN 'Promising (High Value)' -- Low F, High M
             ELSE 'Low-Value Infrequent' -- Low F, Low M
-        END AS customer_segment
+        END AS customer_segment,
+        frequency,
+        monetary
     FROM FM_ranking
 )
+-- Calculate the number and percentage of customers for each segment
 SELECT
     customer_segment,
     COUNT(DISTINCT customer_unique_id) AS number_of_customers,
@@ -90,3 +93,15 @@ GROUP BY
     customer_segment
 ORDER BY 
     number_of_customers DESC;
+
+-- Calculate the average frequency (number of orders) and monetary (total payment) for each segment
+SELECT
+    customer_segment,
+    COUNT(DISTINCT customer_unique_id) AS number_of_customers,
+    AVG(frequency) AS average_frequency,
+    AVG(monetary) AS average_monetary
+FROM segmented_customers
+GROUP BY
+    customer_segment
+ORDER BY
+    average_monetary DESC;
