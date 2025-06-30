@@ -303,17 +303,19 @@ Olist demonstrated significant growth in late 2017, notably influenced by season
 These data-driven recommendations provide a framework for Olist's leadership to prioritize initiatives and allocate resources effectively to foster sustainable growth and improve key aspects of the business.
 
 <!-- 섹션 구분을 위한 가로선 추가 -->
-9. Tableau Dashboard Structure <!-- Tableau 섹션 추가 제안 -->
-The analysis findings are visualized in an interactive Tableau dashboard available on Tableau Public. The dashboard structure is organized into the following key areas:
-Executive Summary: A high-level overview of key metrics (Total Revenue, Total Orders, Re-purchase Rate, Delay Rate).
-Growth Trends: Visualizing monthly orders and revenue, highlighting seasonal peaks.
-Product Performance: Analyzing top categories by revenue, volume, and average order value.
-Regional Distribution: Mapping sales and order counts across Brazilian states and potentially cities.
-Delivery Performance: Visualizing average delivery times and the delay rate.
-Customer Segmentation: Presenting the size and characteristics of different customer segments.
+9. Tableau Dashboard Structure
+The analysis findings are summarized and visualized in an interactive Tableau dashboard available on Tableau Public. This dashboard serves as a **visual executive summary** of the key insights derived from the data analysis.
+
 [Link to the Interactive Tableau Dashboard on Tableau Public] <!-- 여기에 링크를 다시 한번 강조 -->
-(Optional: Add screenshots of key dashboard views in the images folder and link them here)
-<!-- 예시: ![Growth Trend Dashboard View](images/growth_dashboard.png) -->
+
+The dashboard is organized into the following key areas:
+
+*   **Executive Overview:** High-level KPIs and primary business trends.
+*   **Performance & Market Insights:** Product category performance and regional sales distribution.
+*   **Customer Segmentation & Value Analysis:** Distribution and characteristics of customer segments.
+
+**For detailed analysis findings, interpretations, and strategic recommendations corresponding to each visual presented in the dashboard, please refer to the comprehensive sections above (`## 5. SQL & Analysis Highlights` and `## 8. Overall Conclusion and Strategic Recommendations`).**
+
 <!-- 섹션 구분을 위한 가로선 추가 -->
 10. Technical Implementation Notes <!-- 기술적인 디테일 섹션 추가 제안 -->
 Database Setup: The PostgreSQL database schema can be reproduced using the 00_database_setup.sql script found in the sql_queries folder. This script includes DROP, CREATE TABLE, and COPY commands.
