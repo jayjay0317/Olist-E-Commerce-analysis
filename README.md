@@ -302,7 +302,7 @@ Olist demonstrated significant growth in late 2017, notably influenced by season
 
 These data-driven recommendations provide a framework for Olist's leadership to prioritize initiatives and allocate resources effectively to foster sustainable growth and improve key aspects of the business.
 
-<!-- 섹션 구분을 위한 가로선 추가 -->
+---
 ## 9. Tableau Dashboard Structure
 The analysis findings are summarized and visualized in an interactive Tableau dashboard available on Tableau Public. This dashboard serves as a **visual executive summary** of the key insights derived from the data analysis.
 
@@ -316,7 +316,7 @@ The dashboard is organized into the following key areas:
 
 **For detailed analysis findings, interpretations, and strategic recommendations corresponding to each visual presented in the dashboard, please refer to the comprehensive sections above (`## 5. SQL & Analysis Highlights` and `## 8. Overall Conclusion and Strategic Recommendations`).**
 
-<!-- 섹션 구분을 위한 가로선 추가 -->
+---
 ## 10. Technical Implementation Notes <!-- 기술적인 디테일 섹션 추가 제안 -->
 Database Setup: The PostgreSQL database schema can be reproduced using the 00_database_setup.sql script found in the sql_queries folder. This script includes DROP, CREATE TABLE, and COPY commands.
 Data Loading: Data was loaded into PostgreSQL using the COPY command in SQL (or can be automated using Python Pandas with df.to_sql for large files, handling potential CSV parsing issues).
