@@ -314,8 +314,8 @@ The analysis findings are summarized and visualized in an interactive Tableau da
 The dashboard is organized into the following key areas:
 
 *   [**Key Overview:**](https://public.tableau.com/views/OlistDashboard-KeyOverview/ExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) High-level KPIs and primary business trends.
-*   **Product & Market Analysis:** Product category performance and regional sales distribution.
-*   **Customer Insights:** Distribution and characteristics of customer segments.
+*   [**Product & Market Analysis:**](https://public.tableau.com/views/OlistDashboard-ProductMarket/ProductMarket?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Product category performance and regional sales distribution.
+*   [**Customer Insights:**](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Distribution and characteristics of customer segments.
 
 **For detailed analysis findings, interpretations, and strategic recommendations corresponding to each visual presented in the dashboard, please refer to the comprehensive sections above (`## 5. SQL & Analysis Highlights` and `## 8. Overall Conclusion and Strategic Recommendations`).**
 
