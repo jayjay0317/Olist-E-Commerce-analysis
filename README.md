@@ -307,15 +307,11 @@ These data-driven recommendations provide a framework for Olist's leadership to 
 
 ---
 ## 9. Tableau Dashboard Structure
-The analysis findings are summarized and visualized in an interactive Tableau dashboards available on Tableau Public. The dashboards serve as a **visual executive summary** of the key insights derived from the data analysis.
+The analysis findings are presented across three distinct interactive dashboards on Tableau Public, each focusing on a key area:
 
-[Link to the Interactive Tableau Dashboard on Tableau Public] <!-- 여기에 링크를 다시 한번 강조 -->
-
-The dashboard is organized into the following key areas:
-
-*   [**Key Overview:**](https://public.tableau.com/views/OlistDashboard-KeyOverview/ExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) High-level KPIs and primary business trends.
-*   [**Product & Market Analysis:**](https://public.tableau.com/views/OlistDashboard-ProductMarket/ProductMarket?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Product category performance and regional sales distribution.
-*   [**Customer Insights:**](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Distribution and characteristics of customer segments.
+*   [**Key Overview:**](https://public.tableau.com/views/OlistDashboard-KeyOverview/ExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Provides a high-level summary of key performance indicators and overall business trends.
+*   [**Product & Market Analysis:**](https://public.tableau.com/views/OlistDashboard-ProductMarket/ProductMarket?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Details product category performance and the geographic distribution of sales.
+*   [**Customer Insights:**](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Visualizes customer segmentation results and segment characteristics.
 
 **For detailed analysis findings, interpretations, and strategic recommendations corresponding to each visual presented in the dashboard, please refer to the comprehensive sections above (`## 5. SQL & Analysis Highlights` and `## 8. Overall Conclusion and Strategic Recommendations`).**
 
