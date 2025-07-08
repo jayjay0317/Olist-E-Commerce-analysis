@@ -52,14 +52,14 @@ ORDER BY
 ```
 This query aggregates the number of delivered orders and the total payment value on a monthly basis.
 
-Key Insights:  
+**Key Insights:**  
 Consistent Upward Trend: Olist demonstrated a strong and consistent upward trend in both order volume and total revenue throughout 2017.
 
 Significant Seasonal Peak: A remarkable surge in both metrics was observed in November 2017. This significant spike strongly suggests the successful impact of a major seasonal event like Black Friday, highlighting responsiveness to promotional activities.
 
 Momentum into 2018: The positive momentum from late 2017 appears to carry into early 2018, indicating a healthy growth trajectory within the available data period. (Note: Data for late 2018 might be incomplete, limiting long-term trend analysis beyond the scope of this dataset.)
 
-Recommendations:  
+**Recommendations:**  
 Analyze Peak Event Success: Conduct a deeper dive into the factors contributing to the November 2017 peak (e.g., specific promotions, popular products/sellers) to identify key success drivers that can be replicated.
 Strategic Seasonal Planning: Leverage insights from identified seasonal peaks and trends to inform future marketing campaigns, inventory management, and logistics planning for similar events.
 
@@ -104,6 +104,7 @@ LIMIT 10;
 This query calculates the total revenue, number of orders, and average revenue per order for each product category, ranking them by total revenue.
 
 **Key Insights:**
+
 Dominant Revenue Driver: The "health_beauty" category is the leading revenue generator, accounting for a significant portion of total sales. This indicates strong market demand and potential for further growth in this area.
 
 High Volume vs. High Value: Categories like "bed_bath_table" and "sports_leisure" demonstrate a high volume of orders but a comparatively lower average revenue per order. In contrast, categories such as "computers_accessories" or "cool_stuff" might have higher average transaction values but contribute less to overall volume.
@@ -111,6 +112,7 @@ High Volume vs. High Value: Categories like "bed_bath_table" and "sports_leisure
 Strategic Importance: Identifying these different patterns helps distinguish between high-volume, lower-price item strategies and lower-volume, higher-value strategies.
 
 **Recommendations:**
+
 Reinforce Leading Categories: Allocate significant marketing and inventory resources to top-performing categories like "health_beauty".
 Optimize for Volume & Value: For high-volume, lower-price categories, explore strategies like product bundling or cross-selling higher-margin items. For high-value, lower-volume categories, focus on targeted marketing to reach specific customer segments.
 Underperforming Analysis: Conduct further analysis on lower-ranked or underperforming categories to determine if they represent untapped potential or should be de-emphasized.
