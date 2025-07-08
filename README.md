@@ -112,7 +112,9 @@ Strategic Importance: Identifying these different patterns helps distinguish bet
 
 **Recommendations:**  
 Reinforce Leading Categories: Allocate significant marketing and inventory resources to top-performing categories like "health_beauty".  
+
 Optimize for Volume & Value: For high-volume, lower-price categories, explore strategies like product bundling or cross-selling higher-margin items. For high-value, lower-volume categories, focus on targeted marketing to reach specific customer segments.  
+
 Underperforming Analysis: Conduct further analysis on lower-ranked or underperforming categories to determine if they represent untapped potential or should be de-emphasized.
 
 ### 5.3 Regional Sales Analysis
