@@ -54,7 +54,9 @@ This query aggregates the number of delivered orders and the total payment value
 
 Key Insights:  
 Consistent Upward Trend: Olist demonstrated a strong and consistent upward trend in both order volume and total revenue throughout 2017.
+
 Significant Seasonal Peak: A remarkable surge in both metrics was observed in November 2017. This significant spike strongly suggests the successful impact of a major seasonal event like Black Friday, highlighting responsiveness to promotional activities.
+
 Momentum into 2018: The positive momentum from late 2017 appears to carry into early 2018, indicating a healthy growth trajectory within the available data period. (Note: Data for late 2018 might be incomplete, limiting long-term trend analysis beyond the scope of this dataset.)
 
 Recommendations:  
