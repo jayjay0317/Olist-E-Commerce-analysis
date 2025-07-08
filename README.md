@@ -24,8 +24,6 @@ This dashboard is designed to answer the following critical business questions, 
     - [Customer Insights](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 - **Data Source:** [Olist E-commerce Dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
----
-
 ## 5. SQL & Analysis Highlights
 
 This section presents the key SQL queries used to extract, transform, and aggregate data from the PostgreSQL database, along with the major insights derived from each analysis area.
@@ -306,8 +304,6 @@ Analyze Transition Segments: Despite their small size, investigate the character
 
 Optimize First Purchase Experience: Given the high volume of one-time buyers, a strong focus on optimizing the initial customer journey (website usability, product information accuracy, transparent pricing including freight, smooth checkout, timely delivery, and responsive customer service) is critical to making a positive first impression and increasing the likelihood of a second purchase.
 
----
-
 ## 6. Challenges and Learnings
 
 This project provided invaluable learning experiences in various aspects of data analysis and development workflows. Some of the key challenges encountered and lessons learned include:
@@ -336,7 +332,6 @@ Olist demonstrated significant growth in late 2017, notably influenced by season
 
 These data-driven recommendations provide a framework for Olist's leadership to prioritize initiatives and allocate resources effectively to foster sustainable growth and improve key aspects of the business.
 
----
 ## 8. Tableau Dashboard Structure
 The analysis findings are presented across three distinct interactive dashboards on Tableau Public, each focusing on a key area:
 
@@ -346,7 +341,6 @@ The analysis findings are presented across three distinct interactive dashboards
 
 **For detailed analysis findings, interpretations, and strategic recommendations corresponding to the visuals in these dashboards, please refer to the comprehensive sections above (`## 5. SQL & Analysis Highlights` and `## 8. Overall Conclusion and Strategic Recommendations`).**
 
----
 ## 9. Technical Implementation Notes
 Database Setup: The PostgreSQL database schema can be reproduced using the 00_database_setup.sql script found in the sql_queries folder. This script includes DROP, CREATE TABLE, and COPY commands.
 Data Loading: Data was loaded into PostgreSQL using the COPY command in SQL (or can be automated using Python Pandas with df.to_sql for large files, handling potential CSV parsing issues).
