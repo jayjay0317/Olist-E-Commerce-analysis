@@ -103,14 +103,14 @@ LIMIT 10;
 
 This query calculates the total revenue, number of orders, and average revenue per order for each product category, ranking them by total revenue.
 
-#### Key Insights:  
+**Key Insights:**
 Dominant Revenue Driver: The "health_beauty" category is the leading revenue generator, accounting for a significant portion of total sales. This indicates strong market demand and potential for further growth in this area.
 
 High Volume vs. High Value: Categories like "bed_bath_table" and "sports_leisure" demonstrate a high volume of orders but a comparatively lower average revenue per order. In contrast, categories such as "computers_accessories" or "cool_stuff" might have higher average transaction values but contribute less to overall volume.
 
 Strategic Importance: Identifying these different patterns helps distinguish between high-volume, lower-price item strategies and lower-volume, higher-value strategies.
 
-Recommendations:  
+**Recommendations:**
 Reinforce Leading Categories: Allocate significant marketing and inventory resources to top-performing categories like "health_beauty".
 Optimize for Volume & Value: For high-volume, lower-price categories, explore strategies like product bundling or cross-selling higher-margin items. For high-value, lower-volume categories, focus on targeted marketing to reach specific customer segments.
 Underperforming Analysis: Conduct further analysis on lower-ranked or underperforming categories to determine if they represent untapped potential or should be de-emphasized.
