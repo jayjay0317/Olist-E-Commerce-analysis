@@ -289,7 +289,19 @@ Optimize First Purchase Experience: Given the high volume of one-time buyers, a 
 
 ---
 
-## 8. Overall Conclusion and Strategic Recommendations
+## 6. Challenges and Learnings
+
+This project provided invaluable learning experiences in various aspects of data analysis and development workflows. Some of the key challenges encountered and lessons learned include:
+
+*   **Mastering Git Workflow:** Gained practical experience in utilizing core Git commands like `git pull`, `git add`, `git commit`, and `git push` within a real project context, understanding how to manage changes and synchronize work with a remote repository.
+
+*   **Robust Data Import Automation:** Developed a Python script using Pandas and SQLAlchemy to automate the process of importing multiple CSV files into PostgreSQL, learning to handle different file naming conventions and potential parsing issues programmatically.
+
+*   **Secure Credential Management:** Learned the critical importance of protecting sensitive information and implemented best practices for securely managing database credentials using `.env` files and configuring `.gitignore` to prevent accidental uploads to GitHub.
+
+*   **Developing Business Acumen:** Constantly focused on translating technical data findings into actionable business insights and recommendations, striving to understand the 'why' behind the analysis and its potential impact on business strategy.
+
+## 7. Overall Conclusion and Strategic Recommendations
 
 Based on the comprehensive analysis of Olist's 2017 e-commerce data, the following key conclusions and strategic recommendations are proposed to drive growth and improve business health in 2018 and beyond:
 
@@ -306,17 +318,17 @@ Olist demonstrated significant growth in late 2017, notably influenced by season
 These data-driven recommendations provide a framework for Olist's leadership to prioritize initiatives and allocate resources effectively to foster sustainable growth and improve key aspects of the business.
 
 ---
-## 9. Tableau Dashboard Structure
+## 8. Tableau Dashboard Structure
 The analysis findings are presented across three distinct interactive dashboards on Tableau Public, each focusing on a key area:
 
 *   [**Key Overview:**](https://public.tableau.com/views/OlistDashboard-KeyOverview/ExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Provides a high-level summary of key performance indicators and overall business trends.
 *   [**Product & Market Analysis:**](https://public.tableau.com/views/OlistDashboard-ProductMarket/ProductMarket?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Details product category performance and the geographic distribution of sales.
 *   [**Customer Insights:**](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Visualizes customer segmentation results and segment characteristics.
 
-**For detailed analysis findings, interpretations, and strategic recommendations corresponding to each visual presented in the dashboard, please refer to the comprehensive sections above (`## 5. SQL & Analysis Highlights` and `## 8. Overall Conclusion and Strategic Recommendations`).**
+**For detailed analysis findings, interpretations, and strategic recommendations corresponding to the visuals in these dashboards, please refer to the comprehensive sections above (`## 5. SQL & Analysis Highlights` and `## 8. Overall Conclusion and Strategic Recommendations`).**
 
 ---
-## 10. Technical Implementation Notes <!-- 기술적인 디테일 섹션 추가 제안 -->
+## 9. Technical Implementation Notes
 Database Setup: The PostgreSQL database schema can be reproduced using the 00_database_setup.sql script found in the sql_queries folder. This script includes DROP, CREATE TABLE, and COPY commands.
 Data Loading: Data was loaded into PostgreSQL using the COPY command in SQL (or can be automated using Python Pandas with df.to_sql for large files, handling potential CSV parsing issues).
 Query Development: All SQL queries used for the Tableau dashboard are stored in the sql_queries folder, structured by analysis area (01_..., 02_..., etc.).
