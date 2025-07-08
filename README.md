@@ -142,14 +142,18 @@ LIMIT 10;
 ```
 This query aggregates total orders and revenue by customer state to identify the primary geographic markets.
 
-Key Insights:  
+**Key Insights:**  
 Sao Paulo's Dominance: Sao Paulo (SP) state accounts for an overwhelming majority of both orders and revenue, clearly highlighting it as the primary and most critical market for Olist.
+
 Second-Tier Markets: Rio de Janeiro (RJ) and Minas Gerais (MG) are the next largest markets, but they follow distantly behind SP in terms of contribution.
+
 High Geographic Concentration: Sales are heavily concentrated in a few key states, particularly within the Southeast region of Brazil. This indicates both strength in the core market and potential vulnerability to regional economic shifts.
 
-Recommendations:  
+**Recommendations:**  
 Prioritize SP Market: Continue to strategically invest in strengthening market share, marketing efforts, and logistics infrastructure within the SP region while maintaining efficiency.
+
 Develop Secondary Markets: Analyze customer behavior and market potential in RJ, MG, and other top states to develop targeted strategies for increased market penetration and reduce over-reliance on SP.
+
 Logistics Optimization: Consider establishing or strengthening regional logistics hubs in high-volume states to improve delivery speed and cost-effectiveness.
 
 ### 5.4 Delivery Efficiency Analysis
@@ -184,15 +188,20 @@ WHERE
 ```
 The first query calculates the average time from order approval to customer delivery in different formats. The second query calculates the percentage of orders delivered after the estimated delivery date.
 
-Key Insights:  
+**Key Insights:**  
 Average Delivery Time: The average time taken from order approval to customer delivery is approximately 12.13 days (using the decimal representation). The normalized interval is approximately 12 days 3 hours.
+
 Significant Delay Rate: A notable 8.11% of delivered orders are delayed, meaning they reached the customer after the initially estimated delivery date.
+
 Customer Impact: A high delivery delay rate directly impacts customer satisfaction, potentially leading to negative reviews and reduced likelihood of repeat purchases.
 
-Recommendations:  
+**Recommendations:**  
 Root Cause Analysis: Conduct a detailed root cause analysis on delayed orders, investigating factors such as seller location, customer destination, product type, and specific shipping partners to identify bottlenecks.
+
 Improve Estimation Accuracy: Review and potentially refine the estimated delivery date calculation process to set more realistic customer expectations.
+
 Enhance Communication: Implement proactive communication strategies for delayed orders, providing timely updates and accurate revised delivery estimates to customers.
+
 Logistics Optimization: Explore operational improvements in logistics, potentially including faster handovers to carriers or optimizing routes based on delay patterns.
 
 ### 5.5 Customer Loyalty and Value Analysis
@@ -280,17 +289,21 @@ ORDER BY
 ```
 The first query calculates the overall re-purchase rate. The second query first calculates Frequency and Monetary metrics for each unique customer, then ranks them using NTILE window functions, defines customer segments based on these rankings, and finally calculates the size and percentage of total customers within each segment.
 
-Key Insights:  
+**Key Insights:**  
 Low Overall Re-purchase: The overall re-purchase rate is 3.00%. This figure is relatively low, suggesting that the vast majority of Olist's customers are one-time buyers. This highlights a significant challenge and opportunity in improving customer retention.
+
 Highly Bimodal Customer Distribution: The customer base exhibits a highly imbalanced distribution, primarily split into two large segments:
 * 'Low-Value Infrequent': This segment is the largest, accounting for approximately 46.70% of total unique customers. These are primarily customers who made only a single, low-value purchase.
 * 'High-Value Loyal': Surprisingly, this segment is also large, accounting for approximately 46.70% of total unique customers. These are customers who rank highly in both purchasing frequency and total monetary spend.
 Small 'Middle' Segments: The 'Loyal (Lower Value)' and 'Promising (High Value)' segments, representing customers with mixed characteristics, are very small, each accounting for approximately 1.87% of the total customer base. This suggests customers tend to fall into either the one-time/low-value group or quickly become high-value/loyal, with fewer customers in transition between these states.
 
-Recommendations:  
+**Recommendations:**  
 Prioritize High-Value Loyal Retention: Focus on nurturing and rewarding the existing 'High-Value Loyal' customers through exclusive programs, personalized offers, and exceptional service to ensure continued loyalty. Develop strategies to understand the specific factors driving their value and behavior.
+
 Mass Conversion Strategy for Low-Value Infrequent: Develop scalable strategies aimed at converting a significant portion of the large 'Low-Value Infrequent' segment into repeat buyers. This could involve targeted follow-up campaigns, post-purchase discounts on relevant items, or highlighting the benefits of Olist's loyalty program (if any).
+
 Analyze Transition Segments: Despite their small size, investigate the characteristics and purchase journeys of customers in the 'Loyal (Lower Value)' and 'Promising (High Value)' segments to identify potential triggers or barriers that could help transition more customers towards the 'High-Value Loyal' segment.
+
 Optimize First Purchase Experience: Given the high volume of one-time buyers, a strong focus on optimizing the initial customer journey (website usability, product information accuracy, transparent pricing including freight, smooth checkout, timely delivery, and responsive customer service) is critical to making a positive first impression and increasing the likelihood of a second purchase.
 
 ---
