@@ -4,9 +4,9 @@
 This project involves a deep-dive analysis of the Olist e-commerce dataset. The primary goal was to process and analyze sales, customer, and product data using **PostgreSQL** and to build an interactive executive dashboard in **Tableau** to monitor Key Performance Indicators (KPIs) and uncover strategic insights.
 
 ## 2. Tools Used
-- **Database:** PostgreSQL
-- **BI & Visualization:** Tableau
-- **Version Control:** Git & GitHub
+* **Database:** PostgreSQL
+* **BI & Visualization:** Tableau
+* **Version Control:** Git & GitHub
 
 ## 3. Key Business Questions
 This dashboard is designed to answer the following critical business questions, providing a data-driven perspective for business decision-making:
