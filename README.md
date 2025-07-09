@@ -342,7 +342,7 @@ The analysis findings are presented across three distinct interactive dashboards
 **For detailed analysis findings, interpretations, and strategic recommendations corresponding to the visuals in these dashboards, please refer to the comprehensive sections above (`5. SQL & Analysis Highlights` and `7. Overall Conclusion and Strategic Recommendations`).**
 
 ## 9. Technical Implementation Notes
-Database Setup: The PostgreSQL database schema can be reproduced using the 00_database_setup.sql script found in the sql_queries folder. This script includes DROP, CREATE TABLE, and COPY commands.
-Data Loading: Data was loaded into PostgreSQL using the COPY command in SQL (or can be automated using Python Pandas with df.to_sql for large files, handling potential CSV parsing issues).
-Query Development: All SQL queries used for the Tableau dashboard are stored in the sql_queries folder, structured by analysis area (01_..., 02_..., etc.).
-Environment Variables: Database credentials are managed securely using environment variables and loaded via the python-dotenv library, preventing sensitive information from being exposed in the code or version control.
+*   **Database Setup & Data Loading:** The process of creating tables and loading data from original CSV files into PostgreSQL is automated using a **Python script** within the `olist_import_data.ipynb` Jupyter Notebook. This script dynamically creates tables based on CSV filenames and uses the `pandas.DataFrame.to_sql()` method for efficient data loading, handling potential CSV parsing variations.  
+*   **SQL Query Development:** All SQL queries used for data extraction, transformation, and aggregation – which serve as the data source for the Tableau dashboards – are stored and organized by analysis area in the `sql_queries` folder (`01_business_trends.sql`, `02_product_analysis.sql`, etc.).  
+*   **Data Source for Tableau:** The Tableau dashboards are connected to **CSV files** that contain the results of the SQL queries executed against the PostgreSQL database. These processed data files are located in the `processed_data_for_viz` folder within this repository.  
+*   **Secure Credential Management:** Database credentials are managed securely using environment variables and loaded via the python-dotenv library, preventing sensitive information from being exposed in the code or version control.
