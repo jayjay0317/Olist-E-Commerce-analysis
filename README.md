@@ -339,7 +339,7 @@ The analysis findings are presented across three distinct interactive dashboards
 *   [**Product & Market Analysis:**](https://public.tableau.com/views/OlistDashboard-ProductMarket/ProductMarket?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Details product category performance and the geographic distribution of sales.
 *   [**Customer Insights:**](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Visualizes customer segmentation results and segment characteristics.
 
-**For detailed analysis findings, interpretations, and strategic recommendations corresponding to the visuals in these dashboards, please refer to the comprehensive sections above (`## 5. SQL & Analysis Highlights` and `## 8. Overall Conclusion and Strategic Recommendations`).**
+**For detailed analysis findings, interpretations, and strategic recommendations corresponding to the visuals in these dashboards, please refer to the comprehensive sections above (`5. SQL & Analysis Highlights` and `7. Overall Conclusion and Strategic Recommendations`).**
 
 ## 9. Technical Implementation Notes
 Database Setup: The PostgreSQL database schema can be reproduced using the 00_database_setup.sql script found in the sql_queries folder. This script includes DROP, CREATE TABLE, and COPY commands.
