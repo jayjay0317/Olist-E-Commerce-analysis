@@ -11,18 +11,18 @@ This project involves a deep-dive analysis of the Olist e-commerce dataset. The 
 ## 3. Key Business Questions
 This dashboard is designed to answer the following critical business questions, providing a data-driven perspective for business decision-making:
 
-*   **Q1: Business Growth:** What are the monthly sales and revenue trends? How does seasonality affect our business performance?
-*   **Q2: Product Performance:** Which product categories are our main revenue drivers? Are there any hidden gems or underperforming categories?
-*   **Q3: Customer & Regional Analysis:** Where are our key customer markets located? What is the geographic distribution of our sales?
-*   **Q4: Operational Efficiency:** How efficient is our delivery process? Are we meeting our estimated delivery dates?
-*   **Q5: Customer Loyalty:** What is the re-purchase rate of our customer base? How can we segment customers based on their value?
+* **Q1: Business Growth:** What are the monthly sales and revenue trends? How does seasonality affect our business performance?
+* **Q2: Product Performance:** Which product categories are our main revenue drivers? Are there any hidden gems or underperforming categories?
+* **Q3: Customer & Regional Analysis:** Where are our key customer markets located? What is the geographic distribution of our sales?
+* **Q4: Operational Efficiency:** How efficient is our delivery process? Are we meeting our estimated delivery dates?
+* **Q5: Customer Loyalty:** What is the re-purchase rate of our customer base? How can we segment customers based on their value?
 
 ## 4. Dashboard & Data Source
-- **Interactive Dashboard:**
+* **Interactive Dashboard:**
     - [Key Overview](https://public.tableau.com/views/OlistDashboard-KeyOverview/ExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
     - [Product & Market Analysis](https://public.tableau.com/views/OlistDashboard-ProductMarket/ProductMarket?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
     - [Customer Insights](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-- **Data Source:** [Olist E-commerce Dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+* **Data Source:** [Olist E-commerce Dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
 ## 5. SQL & Analysis Highlights
 
@@ -308,13 +308,13 @@ Optimize First Purchase Experience: Given the high volume of one-time buyers, a 
 
 This project provided invaluable learning experiences in various aspects of data analysis and development workflows. Some of the key challenges encountered and lessons learned include:
 
-*   **Mastering Git Workflow:** Gained practical experience in utilizing core Git commands like `git pull`, `git add`, `git commit`, and `git push` within a real project context, understanding how to manage changes and synchronize work with a remote repository.
+* **Mastering Git Workflow:** Gained practical experience in utilizing core Git commands like `git pull`, `git add`, `git commit`, and `git push` within a real project context, understanding how to manage changes and synchronize work with a remote repository.
 
-*   **Robust Data Import Automation:** Developed a Python script using Pandas and SQLAlchemy to automate the process of importing multiple CSV files into PostgreSQL, learning to handle different file naming conventions and potential parsing issues programmatically.
+* **Robust Data Import Automation:** Developed a Python script using Pandas and SQLAlchemy to automate the process of importing multiple CSV files into PostgreSQL, learning to handle different file naming conventions and potential parsing issues programmatically.
 
-*   **Secure Credential Management:** Learned the critical importance of protecting sensitive information and implemented best practices for securely managing database credentials using `.env` files and configuring `.gitignore` to prevent accidental uploads to GitHub.
+* **Secure Credential Management:** Learned the critical importance of protecting sensitive information and implemented best practices for securely managing database credentials using `.env` files and configuring `.gitignore` to prevent accidental uploads to GitHub.
 
-*   **Developing Business Acumen:** Constantly focused on translating technical data findings into actionable business insights and recommendations, striving to understand the 'why' behind the analysis and its potential impact on business strategy.
+* **Developing Business Acumen:** Constantly focused on translating technical data findings into actionable business insights and recommendations, striving to understand the 'why' behind the analysis and its potential impact on business strategy.
 
 ## 7. Overall Conclusion and Strategic Recommendations
 
@@ -325,19 +325,19 @@ Olist demonstrated significant growth in late 2017, notably influenced by season
 
 ### Strategic Recommendations:
 
-1.  **Market Expansion & Risk Mitigation:** While maintaining a strong focus on the core SP market, strategically invest in expanding market penetration and optimizing logistics in high-potential secondary markets (e.g., RJ, MG) to reduce geographic concentration risk and unlock new growth opportunities. Implement data-driven localized marketing campaigns.
-2.  **Product Portfolio & Profitability Management:**  Continue to leverage high-performing categories (e.g., health beauty) and analyze underperformers. Implement strategies to improve the profitability of high-volume but lower-margin categories. Utilize insights from high-value/low-volume categories to inform product sourcing and targeting.
-3.  **Operational Excellence in Delivery:** Conduct a deep-dive root cause analysis for the 8.11% delivery delay rate. Implement targeted operational improvements to reduce average delivery time and aim for a specific, measurable target for delay reduction (e.g., achieve less than 5% delay rate). Enhance transparent customer communication regarding shipping status and potential delays.
-4.  **Customer Loyalty & Retention:** Address the low 3.00% overall re-purchase rate as a top priority. Leverage the identified customer segments (especially 'Low-Value Infrequent' and 'High-Value Loyal') to develop and implement personalized retention strategies, loyalty programs, and targeted communications aimed at increasing repeat purchases and maximizing customer lifetime value. Optimize the initial purchase experience to encourage first-time buyers to return.
+1. **Market Expansion & Risk Mitigation:** While maintaining a strong focus on the core SP market, strategically invest in expanding market penetration and optimizing logistics in high-potential secondary markets (e.g., RJ, MG) to reduce geographic concentration risk and unlock new growth opportunities. Implement data-driven localized marketing campaigns.
+2. **Product Portfolio & Profitability Management:**  Continue to leverage high-performing categories (e.g., health beauty) and analyze underperformers. Implement strategies to improve the profitability of high-volume but lower-margin categories. Utilize insights from high-value/low-volume categories to inform product sourcing and targeting.
+3. **Operational Excellence in Delivery:** Conduct a deep-dive root cause analysis for the 8.11% delivery delay rate. Implement targeted operational improvements to reduce average delivery time and aim for a specific, measurable target for delay reduction (e.g., achieve less than 5% delay rate). Enhance transparent customer communication regarding shipping status and potential delays.
+4. **Customer Loyalty & Retention:** Address the low 3.00% overall re-purchase rate as a top priority. Leverage the identified customer segments (especially 'Low-Value Infrequent' and 'High-Value Loyal') to develop and implement personalized retention strategies, loyalty programs, and targeted communications aimed at increasing repeat purchases and maximizing customer lifetime value. Optimize the initial purchase experience to encourage first-time buyers to return.
 
 These data-driven recommendations provide a framework for Olist's leadership to prioritize initiatives and allocate resources effectively to foster sustainable growth and improve key aspects of the business.
 
 ## 8. Tableau Dashboard Structure
 The analysis findings are presented across three distinct interactive dashboards on Tableau Public, each focusing on a key area:
 
-*   [**Key Overview:**](https://public.tableau.com/views/OlistDashboard-KeyOverview/ExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Provides a high-level summary of key performance indicators and overall business trends.
-*   [**Product & Market Analysis:**](https://public.tableau.com/views/OlistDashboard-ProductMarket/ProductMarket?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Details product category performance and the geographic distribution of sales.
-*   [**Customer Insights:**](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Visualizes customer segmentation results and segment characteristics.
+* [**Key Overview:**](https://public.tableau.com/views/OlistDashboard-KeyOverview/ExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Provides a high-level summary of key performance indicators and overall business trends.
+* [**Product & Market Analysis:**](https://public.tableau.com/views/OlistDashboard-ProductMarket/ProductMarket?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Details product category performance and the geographic distribution of sales.
+* [**Customer Insights:**](https://public.tableau.com/views/OlistDashboard-CustomerInsights/CustomerSegmentationValue?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) Visualizes customer segmentation results and segment characteristics.
 
 **For detailed analysis findings, interpretations, and strategic recommendations corresponding to the visuals in these dashboards, please refer to the comprehensive sections above (`5. SQL & Analysis Highlights` and `7. Overall Conclusion and Strategic Recommendations`).**
 
