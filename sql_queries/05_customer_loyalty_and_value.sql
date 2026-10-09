@@ -35,6 +35,10 @@ JOIN (
 --------------------------------------------------------------------------------
 */
 
+
+-- Customer segmentation based on purchase frequency
+-- and total monetary value
+
 WITH unique_customer_orders AS (
     -- Get all delivered orders for each unique customer
     SELECT
@@ -47,8 +51,10 @@ WITH unique_customer_orders AS (
     JOIN order_payments op ON o.order_id = op.order_id
     WHERE o.order_status = 'delivered'
 ),
+
 customer_FM AS (
-    -- Calculate Frequency (number of orders) and Monetary (total payment) per unique customer
+    -- Calculate purchase frequency and total payment
+    -- for each unique customer
     SELECT
         customer_unique_id,
         COUNT(DISTINCT order_id) AS frequency,
@@ -56,52 +62,61 @@ customer_FM AS (
     FROM unique_customer_orders
     GROUP BY customer_unique_id
 ),
+
 FM_ranking AS (
-    -- Rank customers based on Frequency and Monetary values
-    -- NTILE(4) divides customers into 4 groups (quartiles) based on the metric
+    -- Divide customers into quartiles based on
+    -- total monetary value
     SELECT
         customer_unique_id,
         frequency,
         monetary,
-        NTILE(4) OVER (ORDER BY frequency ASC) AS frequency_quartile, -- Lower quartile = fewer orders
-        NTILE(4) OVER (ORDER BY monetary ASC) AS monetary_quartile     -- Lower quartile = less spent
+        NTILE(4) OVER (
+            ORDER BY monetary ASC, customer_unique_id
+        ) AS monetary_quartile
     FROM customer_FM
 ),
+
 segmented_customers AS (
-    -- Define customer segments
-    -- Add a CASE statement to define segments based on quartiles (e.g., 'High-Value', 'Loyal')
+    -- Classify customers based on actual purchase
+    -- frequency and relative monetary value
     SELECT
         customer_unique_id,
-        -- Example of simple segmentation based on quartiles
-        CASE
-            WHEN frequency_quartile >= 3 AND monetary_quartile >= 3 THEN 'High-Value Loyal' -- High F, High M
-            WHEN frequency_quartile >= 3 AND monetary_quartile < 3 THEN 'Loyal (Lower Value)' -- High F, Low M
-            WHEN frequency_quartile < 3 AND monetary_quartile >= 3 THEN 'Promising (High Value)' -- Low F, High M
-            ELSE 'Low-Value Infrequent' -- Low F, Low M
-        END AS customer_segment,
         frequency,
-        monetary
+        monetary,
+        CASE
+            WHEN frequency >= 2
+                AND monetary_quartile >= 3
+                THEN 'High-Value Repeat'
+
+            WHEN frequency >= 2
+                AND monetary_quartile < 3
+                THEN 'Repeat (Lower Value)'
+
+            WHEN frequency = 1
+                AND monetary_quartile >= 3
+                THEN 'High-Value One-Time'
+
+            ELSE 'Low-Value One-Time'
+        END AS customer_segment
     FROM FM_ranking
 )
--- Calculate the number and percentage of customers for each segment
-SELECT
-    customer_segment,
-    COUNT(DISTINCT customer_unique_id) AS number_of_customers,
-    CAST(COUNT(DISTINCT customer_unique_id) AS REAL) * 100 / (SELECT COUNT(DISTINCT customer_unique_id) FROM customers) AS percentage_of_total
-FROM segmented_customers
-GROUP BY
-    customer_segment
-ORDER BY 
-    number_of_customers DESC;
 
--- Calculate the average frequency (number of orders) and monetary (total payment) for each segment
+-- Calculate customer counts, percentages,
+-- average purchase frequency, and monetary value
 SELECT
     customer_segment,
-    COUNT(DISTINCT customer_unique_id) AS number_of_customers,
-    AVG(frequency) AS average_frequency,
-    AVG(monetary) AS average_monetary
+    COUNT(*) AS number_of_customers,
+    ROUND(
+        100.0 * COUNT(*) /
+        (SELECT COUNT(*) FROM segmented_customers),
+        2
+    ) AS percentage_of_total,
+    ROUND(
+        AVG(frequency)::numeric, 2
+    ) AS average_frequency,
+    ROUND(
+        AVG(monetary)::numeric, 2
+    ) AS average_monetary
 FROM segmented_customers
-GROUP BY
-    customer_segment
-ORDER BY
-    average_monetary DESC;
+GROUP BY customer_segment
+ORDER BY number_of_customers DESC;
