@@ -204,7 +204,7 @@ Logistics Optimization: Explore operational improvements in logistics, potential
 
 ### 5.5 Customer Loyalty and Value Analysis
 
-Understanding customer behavior is key to driving repeat business and maximizing Customer Lifetime Value. This analysis examines the overall re-purchase rate and segments customers based on their purchasing frequency (Frequency) and total monetary value (Monetary) using **Window Functions (NTILE)** for segmentation.
+Understanding customer behavior is key to driving repeat business and maximizing Customer Lifetime Value. This analysis examines the overall re-purchase rate and segments customers based on their actual purchase frequency (Frequency) and total monetary value (Monetary), using **Window Functions (NTILE)** to classify customers by relative spending levels.
 
 ```sql
 -- Query to calculate overall re-purchase rate
@@ -228,7 +228,7 @@ JOIN (
         customer_unique_id
 ) AS customer_order_counts ON c.customer_unique_id = customer_order_counts.customer_unique_id;
 
--- This query segments customers into four groups based on Frequency and Monetary values, and calculates the number and percentage of customers in each segment.
+-- Segment customers based on actual purchase frequency and relative monetary value
 WITH unique_customer_orders AS (
     -- Get all delivered orders for each unique customer
     SELECT
@@ -251,58 +251,65 @@ customer_FM AS (
     GROUP BY customer_unique_id
 ),
 FM_ranking AS (
-    -- Rank customers based on Frequency and Monetary values
-    -- NTILE(4) divides customers into 4 groups (quartiles) based on the metric
+    -- Divide customers into quartiles based on total monetary value
     SELECT
         customer_unique_id,
         frequency,
         monetary,
-        NTILE(4) OVER (ORDER BY frequency ASC) AS frequency_quartile, -- Lower quartile = fewer orders
-        NTILE(4) OVER (ORDER BY monetary ASC) AS monetary_quartile     -- Lower quartile = less spent
+        NTILE(4) OVER (ORDER BY monetary ASC, customer_unique_id) AS monetary_quartile
     FROM customer_FM
 ),
 segmented_customers AS (
-    -- Define customer segments
-    -- Add a CASE statement to define segments based on quartiles (e.g., 'High-Value', 'Loyal')
+    -- Classify customers based on actual purchase frequency and relative spending
     SELECT
         customer_unique_id,
-        -- Example of simple segmentation based on quartiles
+        frequency,
+        monetary,
         CASE
-            WHEN frequency_quartile >= 3 AND monetary_quartile >= 3 THEN 'High-Value Loyal' -- High F, High M
-            WHEN frequency_quartile >= 3 AND monetary_quartile < 3 THEN 'Loyal (Lower Value)' -- High F, Low M
-            WHEN frequency_quartile < 3 AND monetary_quartile >= 3 THEN 'Promising (High Value)' -- Low F, High M
-            ELSE 'Low-Value Infrequent' -- Low F, Low M
+            WHEN frequency >= 2 AND monetary_quartile >= 3 THEN 'High-Value Repeat'
+            WHEN frequency >= 2 AND monetary_quartile < 3 THEN 'Repeat (Lower Value)'
+            WHEN frequency = 1 AND monetary_quartile >= 3 THEN 'High-Value One-Time'
+            ELSE 'Low-Value One-Time'
         END AS customer_segment
     FROM FM_ranking
 )
+-- Calculate the number, percentage, average frequency, and average monetary value for each segment
 SELECT
     customer_segment,
-    COUNT(DISTINCT customer_unique_id) AS number_of_customers,
-    CAST(COUNT(DISTINCT customer_unique_id) AS REAL) * 100 / (SELECT COUNT(DISTINCT customer_unique_id) FROM customers) AS percentage_of_total
+    COUNT(*) AS number_of_customers,
+    ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM segmented_customers), 2) AS percentage_of_total,
+    ROUND(AVG(frequency)::numeric, 2) AS average_frequency,
+    ROUND(AVG(monetary)::numeric, 2) AS average_monetary
 FROM segmented_customers
 GROUP BY
     customer_segment
-ORDER BY 
+ORDER BY
     number_of_customers DESC;
 ```
-The first query calculates the overall re-purchase rate. The second query first calculates Frequency and Monetary metrics for each unique customer, then ranks them using NTILE window functions, defines customer segments based on these rankings, and finally calculates the size and percentage of total customers within each segment.
+
+The first query calculates the overall re-purchase rate. The second query calculates Frequency and Monetary metrics for each unique customer, uses NTILE to divide customers into monetary quartiles, and classifies them into four segments based on actual purchase counts and relative spending levels. It then calculates the number, percentage, average purchase frequency, and average total spending for each segment.
 
 **Key Insights:**  
-Low Overall Re-purchase: The overall re-purchase rate is 3.00%. This figure is relatively low, suggesting that the vast majority of Olist's customers are one-time buyers. This highlights a significant challenge and opportunity in improving customer retention.
+Low Overall Re-purchase: The overall re-purchase rate is 3.00%, indicating that approximately 97% of customers made only one delivered purchase during the observed period. This highlights a significant opportunity to investigate barriers to repeat purchases and improve customer retention.
 
-Highly Bimodal Customer Distribution: The customer base exhibits a highly imbalanced distribution, primarily split into two large segments:
-* 'Low-Value Infrequent': This segment is the largest, accounting for approximately 46.70% of total unique customers. These are primarily customers who made only a single, low-value purchase.
-* 'High-Value Loyal': Surprisingly, this segment is also large, accounting for approximately 46.70% of total unique customers. These are customers who rank highly in both purchasing frequency and total monetary spend.
-Small 'Middle' Segments: The 'Loyal (Lower Value)' and 'Promising (High Value)' segments, representing customers with mixed characteristics, are very small, each accounting for approximately 1.87% of the total customer base. This suggests customers tend to fall into either the one-time/low-value group or quickly become high-value/loyal, with fewer customers in transition between these states.
+Customer Segmentation Results: Among 93,357 unique customers with delivered orders and available payment records, the vast majority belong to one-time buyer segments:
+* **'Low-Value One-Time':** This segment is the largest, accounting for 49.64% (46,345 customers). These customers made one purchase, with an average total spending of 63.44.
+* **'High-Value One-Time':** This segment accounts for 47.36% (44,211 customers). Despite making only one purchase, these customers have relatively high spending, averaging 262.79. They represent a potential target for strategies aimed at encouraging a second purchase.
+* **'High-Value Repeat':** This segment accounts for 2.64% (2,467 customers), with an average purchase frequency of 2.13 and average total spending of 339.19. These customers demonstrate repeat purchasing behavior and relatively high total spending.
+* **'Repeat (Lower Value)':** This is the smallest segment, accounting for 0.36% (334 customers), with an average purchase frequency of 2.02 and average total spending of 82.52. These customers make repeat purchases but spend relatively less.
+
+Dominance of One-Time Buyers: One-time buyers account for 97.00% of the segmented customer base, while repeat buyers account for only 3.00%. This suggests that encouraging customers to make a second purchase could be an important opportunity for business growth.
+
+Spending Differences: Most repeat buyers belong to the 'High-Value Repeat' segment. However, their higher total spending is partly explained by having multiple purchases. Further analysis of average order value and purchasing patterns would help distinguish spending behavior from purchase frequency.
 
 **Recommendations:**  
-Prioritize High-Value Loyal Retention: Focus on nurturing and rewarding the existing 'High-Value Loyal' customers through exclusive programs, personalized offers, and exceptional service to ensure continued loyalty. Develop strategies to understand the specific factors driving their value and behavior.
+Improve First Purchase Experience: Given the high proportion of one-time buyers, prioritize investigating the initial customer journey, including product information accuracy, transparent pricing, checkout experience, delivery reliability, and customer support. Identifying and addressing potential friction points may help encourage customers to return.
 
-Mass Conversion Strategy for Low-Value Infrequent: Develop scalable strategies aimed at converting a significant portion of the large 'Low-Value Infrequent' segment into repeat buyers. This could involve targeted follow-up campaigns, post-purchase discounts on relevant items, or highlighting the benefits of Olist's loyalty program (if any).
+Target High-Value One-Time Buyers: Explore personalized follow-up campaigns, relevant product recommendations, and post-purchase promotions aimed at encouraging a second purchase. Customers who made relatively high-value first purchases may be a useful segment for testing targeted retention strategies.
 
-Analyze Transition Segments: Despite their small size, investigate the characteristics and purchase journeys of customers in the 'Loyal (Lower Value)' and 'Promising (High Value)' segments to identify potential triggers or barriers that could help transition more customers towards the 'High-Value Loyal' segment.
+Understand Repeat Customer Behavior: Analyze the product preferences, purchase intervals, and average order values of repeat customers to identify patterns associated with additional purchases. These findings could help inform customer retention and cross-selling strategies.
 
-Optimize First Purchase Experience: Given the high volume of one-time buyers, a strong focus on optimizing the initial customer journey (website usability, product information accuracy, transparent pricing including freight, smooth checkout, timely delivery, and responsive customer service) is critical to making a positive first impression and increasing the likelihood of a second purchase.
+Measure Retention Strategy Effectiveness: Design A/B tests to evaluate proposed retention initiatives, using metrics such as second-purchase conversion rate, repeat-purchase rate, and revenue per customer. Use experimental results to identify effective strategies before broader implementation.
 
 ## 6. Challenges and Learnings
 
